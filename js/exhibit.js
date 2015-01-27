@@ -15,5 +15,15 @@ $(function(){
 			.css('background-size', 'cover');
 	});
 
+	$('.plaque').each(function(){
+		$(this).on('click', function(){
+			el = $(this);
+			if (el.hasClass('stick'))
+				el.removeClass('stick');
+			else
+				el.addClass('stick');
+		})
+	});
+
 });
 
