@@ -7,6 +7,7 @@ $(function(){
 	$(window).resize(wresize);
 	wresize();
 
+	// set the background for each image to be the image itself
 	$('.wall').each(function(i, el){
 		var src = $(el).find('img')[0].src;
 		$(el)
@@ -15,3 +16,4 @@ $(function(){
 	});
 
 });
+

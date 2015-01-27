@@ -84,7 +84,7 @@ h1 {
 }
 
 .frame {
-	box-shadow: 1px 1px 25px #333;
+	box-shadow: 0px 20px 20px #777;
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
@@ -104,7 +104,7 @@ h1 {
 	width: 200px;
 	height: 200px;
 	background-color: #eee;
-	box-shadow: 1px 1px 25px #333;
+	box-shadow: 0px 10px 15px #aaa;
 	display: inline-block;
 	text-align: left;
 	margin-left: 140px;
