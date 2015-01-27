@@ -18,11 +18,26 @@ $(function(){
 	$('.plaque').each(function(){
 		$(this).on('click', function(){
 			el = $(this);
-			if (el.hasClass('stick'))
-				el.removeClass('stick');
-			else
-				el.addClass('stick');
-		})
+			el.hasClass('stick')
+				? el.removeClass('stick')
+				: el.addClass('stick');
+		});
+	});
+
+	var walls = $('.wall');
+	$('#next').on('click', function(e){
+		e.preventDefault();
+
+		var current = walls.first();
+		var pos = $('body').scrollTop();
+		walls.each(function(i,v){
+			if ($(v).offset().top <= pos) current = v;
+		});
+
+		var next = $(current).next('.wall');
+		if (next.length == 0)
+			next = walls.first();
+		$('body').animate({ scrollTop:$(next).offset().top });
 	});
 
 });
