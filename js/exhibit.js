@@ -26,7 +26,7 @@ $(function(){
 
 	var walls = $('.wall');
 	$('#next').on('click', function(e){
-		//e.preventDefault();
+		e.preventDefault();
 
 		var current = walls.first();
 		var pos = $(window).scrollTop();
