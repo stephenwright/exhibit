@@ -26,10 +26,10 @@ $(function(){
 
 	var walls = $('.wall');
 	$('#next').on('click', function(e){
-		e.preventDefault();
+		//e.preventDefault();
 
 		var current = walls.first();
-		var pos = $('body').scrollTop();
+		var pos = $(window).scrollTop();
 		walls.each(function(i,v){
 			if ($(v).offset().top <= pos) current = v;
 		});
@@ -37,7 +37,8 @@ $(function(){
 		var next = $(current).next('.wall');
 		if (next.length == 0)
 			next = walls.first();
-		$('body').animate({ scrollTop:$(next).offset().top });
+		var top = $(next).offset().top;
+		$('html,body').animate({ scrollTop:top });
 	});
 
 });
