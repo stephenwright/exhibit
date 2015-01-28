@@ -30,7 +30,7 @@ $(function(){
 
 	function updateCurrentWall(){
 		current = walls.first();
-		var pos = $('body').scrollTop();
+		var pos = $(window).scrollTop();
 		walls.each(function(i,v){
 			if ($(v).offset().top <= pos) current = v;
 		});
@@ -47,7 +47,7 @@ $(function(){
 	$next.on('click', function(e){
 		e.preventDefault();
 		current = getNextWall();
-		$('body').animate({ scrollTop:$(current).offset().top });
+		$('html,body').animate({ scrollTop:$(current).offset().top });
 	});
 
 	$(window).on('scroll', function(){
