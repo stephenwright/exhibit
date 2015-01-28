@@ -146,6 +146,12 @@ h1 {
 	z-index: 100;
 	cursor: pointer;
 	color: #aaa;
+
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
 }
 #next:hover {
 	color: #900;
@@ -165,3 +171,12 @@ h1 {
 	width: 350px !important;
 }
 
+.flip {
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+
+	transform: rotate(180deg);	
+}

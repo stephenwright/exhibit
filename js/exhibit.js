@@ -24,20 +24,35 @@ $(function(){
 		});
 	});
 
+	var current;
 	var walls = $('.wall');
-	$('#next').on('click', function(e){
-		e.preventDefault();
+	var $next = $('#next');
 
-		var current = walls.first();
+	function updateCurrentWall(){
+		current = walls.first();
 		var pos = $('body').scrollTop();
 		walls.each(function(i,v){
 			if ($(v).offset().top <= pos) current = v;
 		});
+	}
 
+	function getNextWall() {
+		updateCurrentWall();
 		var next = $(current).next('.wall');
 		if (next.length == 0)
 			next = walls.first();
-		$('body').animate({ scrollTop:$(next).offset().top });
+		return next[0];
+	}
+
+	$next.on('click', function(e){
+		e.preventDefault();
+		current = getNextWall();
+		$('body').animate({ scrollTop:$(current).offset().top });
+	});
+
+	$(window).on('scroll', function(){
+		updateCurrentWall();
+		current == walls.last()[0] ? $next.addClass('flip') : $next.removeClass('flip');
 	});
 
 });
