@@ -84,12 +84,21 @@ h1 {
 	background-color: rgba(255,255,255,0.85);
 }
 
+.piece {
+}
+
 .frame {
-	box-shadow: 0px 20px 20px #777;
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
 	z-index: 1;
+	box-shadow: 0px 20px 20px #777;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	cursor: pointer;
 }
 
 .frame img {
@@ -100,7 +109,7 @@ h1 {
 	z-index: 1;
 }
 
-.piece .plaque {
+.plaque {
 	vertical-align: bottom;
 	background-color: #eee;
 	display: inline-block;
@@ -122,11 +131,12 @@ h1 {
 
 	box-shadow: 0px 10px 10px #aaa;
 	width: 180px;
-	height: 100px;
+	height: 80px;
 }
 
 .plaque .title {
 	margin: 3px;
+	font-size: 16px;
 	font-style: italic;
 }
 .plaque .author {
@@ -159,6 +169,16 @@ h1 {
 }
 
 /* Animations/Transitions */
+
+.zoom {
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+
+	transform: scale(1.5);
+}
 
 .stick {
 	-webkit-transition: 1s;

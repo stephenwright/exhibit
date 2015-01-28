@@ -15,13 +15,14 @@ $(function(){
 			.css('background-size', 'cover');
 	});
 
-	$('.plaque').each(function(){
-		$(this).on('click', function(){
-			el = $(this);
-			el.hasClass('stick')
-				? el.removeClass('stick')
-				: el.addClass('stick');
-		});
+	$('.plaque').on('click', function(){
+		el = $(this);
+		el.hasClass('stick') ? el.removeClass('stick') : el.addClass('stick');
+	});
+
+	$('.frame').on('click', function(){
+		el = $(this);
+		el.hasClass('zoom') ? el.removeClass('zoom') : el.addClass('zoom');
 	});
 
 	var current;
